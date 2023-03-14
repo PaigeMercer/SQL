@@ -1,0 +1,31 @@
+--Create a Pet Store Database
+
+CREATE TABLE Pet_Store (id integer primary key, item text, quantity integer, price integer, pet text); 
+
+INSERT INTO Pet_Store VALUES (1, "leashes", 20, 5.99, "dog");
+INSERT INTO Pet_Store VALUES (2, "bowls", 15, 2.99, "cat");
+INSERT INTO Pet_Store VALUES (3, "toys", 25, 6.99, "dog");
+INSERT INTO Pet_Store VALUES (4, "kennels, small", 5, 24.99, "dog");
+INSERT INTO Pet_Store VALUES (5, "kennels, medium", 5, 39.99, "dog");
+INSERT INTO Pet_Store VALUES (6, "kennels, large", 5, 49.99, "dog");
+INSERT INTO Pet_Store VALUES (7, "catnip", 50, 2.99, "cat");
+INSERT INTO Pet_Store VALUES (8, "grass", 20, 5.99, "cat");
+INSERT INTO Pet_Store VALUES (9, "wheel", 10, 9.99, "rodent");
+INSERT INTO Pet_Store VALUES (10, "hay", 10, 8.99, "rodent");
+INSERT INTO Pet_Store VALUES (11, "cat tower", 5, 44.99, "cat");
+INSERT INTO Pet_Store VALUES (12, "cage", 5, 29.99, "rodent");
+INSERT INTO Pet_Store VALUES (13, "pellets", 25, 12.99, "rodent");
+INSERT INTO Pet_Store VALUES (14, "dog food", 25, 29.99, "dog");
+INSERT INTO Pet_Store VALUES (15, "cat food", 25, 24.99, "cat");
+
+--Display to database ordered by price.
+SELECT * FROM Pet_Store 
+ORDER BY price;
+
+--What is the total amount of items needed to order for the store?
+SELECT price, SUM(quantity) FROM Pet_Store; 
+
+What are the top 5 most expensive items?
+SELECT item, price FROM Pet_Store
+ORDER BY price desc
+LIMIT 5
